@@ -9,4 +9,5 @@ export default styled.p`
   color: ${props => (props.color ? props.color : "inherit")};
   font-size: ${props => (props.fontSize ? props.fontSize : "inherit")};
   font-style: ${props => (props.italic ? "italic" : "normal")};
+  border: ${props => (props.border ? props.border : "none")};
 `

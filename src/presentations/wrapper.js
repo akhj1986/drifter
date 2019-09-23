@@ -3,7 +3,7 @@ import { device } from "../presentations/breakpoints"
 
 export default styled.div`
   background-color: ${props =>
-    props.background ? props.background : "rgba(0,0,0,0)"};
+    props.background ? props.background : "inherit"};
   color: ${props => (props.color ? props.color : "inherit")};
   width: ${props => (props.width ? props.width : "100%")};
   max-width: ${props => (props.maxWidth ? props.maxWidth : "100vw")};
@@ -11,6 +11,10 @@ export default styled.div`
   padding: ${props => (props.padding ? props.padding : "0")};
   height: ${props => (props.height ? props.height : "auto")};
   min-height: ${props => (props.minHeight ? props.minHeight : null)};
+  position: ${props => (props.position ? props.position : "static")};
+  left: ${props => (props.left ? props.left : null)};
+  right: ${props => (props.right ? props.right : null)};
+  top: ${props => (props.top ? props.top : null)};
   display: flex;
   flex-direction: ${props => (props.row ? "row" : "column")};
   align-items: ${props => (props.align ? props.align : "center")};
@@ -22,7 +26,7 @@ export default styled.div`
   overflow: hidden;
   border: ${props => (props.border ? props.border : "none")};
   border-radius: ${props => (props.radius ? props.radius : "0")};
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   /* Media queries */
   @media ${device.smallBreak} {
     padding: ${props =>

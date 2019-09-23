@@ -7,4 +7,5 @@ export default styled(props => <Link {...props} />)`
   text-decoration: none;
   margin: ${props => (props.margin ? props.margin : "0")};
   color: ${props => (props.color ? props.color : "inherit")};
+  font-weight: ${props => (props.fontWeight ? props.fontWeight : "inherit")};
 `
