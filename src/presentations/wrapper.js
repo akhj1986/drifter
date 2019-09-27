@@ -15,18 +15,21 @@ export default styled.div`
   left: ${props => (props.left ? props.left : null)};
   right: ${props => (props.right ? props.right : null)};
   top: ${props => (props.top ? props.top : null)};
-  display: flex;
+  bottom: ${props => (props.bottom ? props.bottom : null)};
+  display: ${props => (props.display ? props.display : "flex")};
   flex-direction: ${props => (props.row ? "row" : "column")};
-  align-items: ${props => (props.align ? props.align : "center")};
-  justify-content: ${props => (props.justify ? props.justify : "center")};
+  align-items: ${props => (props.align ? props.align : "flex-start")};
+  justify-content: ${props => (props.justify ? props.justify : "flex-start")};
   font-family: ${props =>
     props.fontFamily ? props.fontFamily : "Arial, Helvetica, sans-serif"};
-  font-size: ${props => (props.fontSize ? props.fontSize : "16px")};
+  font-size: ${props => (props.fontSize ? props.fontSize : "inherit")};
   letter-spacing: ${props => (props.spacing ? props.spacing : "inherit")};
   overflow: hidden;
   border: ${props => (props.border ? props.border : "none")};
   border-radius: ${props => (props.radius ? props.radius : "0")};
-  transition: all 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+
   /* Media queries */
   @media ${device.smallBreak} {
     padding: ${props =>

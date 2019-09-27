@@ -3,7 +3,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 export default styled(props => <Link {...props} />)`
-  font-size: ${props => (props.font ? props.font : "11px")};
+  font-size: ${props => (props.fontSize ? props.fontSize : "11px")};
   text-decoration: none;
   margin: ${props => (props.margin ? props.margin : "0")};
   color: ${props => (props.color ? props.color : "inherit")};

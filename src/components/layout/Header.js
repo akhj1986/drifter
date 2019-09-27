@@ -3,12 +3,12 @@ import {
   Wrapper,
   Header1,
   Header3,
-  PageLink,
   MyButton,
   SunIcon,
   MoonIcon
 } from "../../presentations"
-import { ThemeContext } from "../../presentations/theme-context"
+import { ThemeContext } from "../../context/theme-context"
+import NavBar from "./NavBar"
 
 export default () => {
   const context = useContext(ThemeContext)
@@ -17,87 +17,93 @@ export default () => {
     <Wrapper
       height="150px"
       justify="space-between"
-      align="flex-start"
       background={context.theme.header}
     >
       <Wrapper
         background={context.theme.header}
         position="absolute"
+        justify="space-between"
+        align="center"
+        row
         top="10px"
         right={context.theme.button.offset}
-        width="100px"
-        height="50px"
-        row
-        justify="flex-start"
+        width="200px"
+        spacing="2px"
+        height="25px"
       >
-        <Header3
-          margin="0"
-          padding="0"
-          fontSize="12px"
-          color={context.theme.siteTitle}
-        >
-          Contrast:
-        </Header3>
-        <MyButton
-          onClick={context.toggleTheme}
-          background={context.theme.button.background}
-          width="18px"
-          height="18px"
-          borderRadius="9px"
-          border="none"
-          margin="0 0 0 2px"
-          color="yellow"
-        >
-          {context.theme.name === "dark" ? (
-            <SunIcon></SunIcon>
-          ) : (
-            <MoonIcon></MoonIcon>
-          )}
-        </MyButton>
+        <Wrapper background={context.theme.header} row align="center">
+          <Header3
+            margin="0"
+            padding="0"
+            fontSize="13px"
+            color={context.theme.siteTitle}
+          >
+            Contrast:
+          </Header3>
+          <MyButton
+            onClick={context.toggleTheme}
+            background={context.theme.button.background}
+            width="20px"
+            height="20px"
+            borderRadius="50%"
+            border="none"
+            margin="0 0 0 2px"
+            color="yellow"
+          >
+            {context.theme.name === "dark" ? (
+              <SunIcon></SunIcon>
+            ) : (
+              <MoonIcon></MoonIcon>
+            )}
+          </MyButton>
+        </Wrapper>
+        <Wrapper background={context.theme.header} row align="baseline">
+          <Header3
+            margin="0"
+            padding="0"
+            fontSize="13px"
+            color={context.theme.siteTitle}
+          >
+            Text:
+          </Header3>
+          <MyButton
+            onClick={context.plusScale}
+            width="24px"
+            height="24px"
+            fontSize="16px"
+            fontWeight="700"
+            margin="0 0 0 2px"
+            background={context.theme.header}
+            color={context.theme.siteTitle}
+          >
+            A+
+          </MyButton>
+          <MyButton
+            onClick={context.minusScale}
+            width="20px"
+            height="20px"
+            fontSize="14px"
+            fontWeight="700"
+            margin="0 0 0 0"
+            background={context.theme.header}
+            color={context.theme.siteTitle}
+          >
+            A-
+          </MyButton>
+        </Wrapper>
       </Wrapper>
       <Header1
         color={context.theme.siteTitle}
         opacity=".8"
-        margin="50px 0 0 50px"
+        margin="60px 0 0 50px"
         fontFamily="'Cinzel', serif"
-        fontSize="30px"
+        fontSize="34px"
         smallBreakMargin="50px 0 0 80px"
+        spacing="2px"
       >
         The Drifter
       </Header1>
-
-      <Wrapper
-        background={context.theme.nav}
-        row
-        width="100%"
-        justify="flex-start"
-        padding="10px 0 10px 50px"
-        smallBreakPadding="10px 0 10px 80px"
-      >
-        <PageLink
-          margin="0 20px 0 0"
-          to="/"
-          color={context.theme.linkColor}
-          fontWeight={context.theme.linkWeight}
-        >
-          Home
-        </PageLink>
-        <PageLink
-          margin="0 20px 0 0"
-          to="/browse"
-          color={context.theme.linkColor}
-          fontWeight={context.theme.linkWeight}
-        >
-          Articles
-        </PageLink>
-        <PageLink
-          to="/contact"
-          color={context.theme.linkColor}
-          fontWeight={context.theme.linkWeight}
-        >
-          Get in touch
-        </PageLink>
-      </Wrapper>
+      <NavBar></NavBar>
     </Wrapper>
   )
 }

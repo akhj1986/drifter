@@ -2,7 +2,7 @@
   "pages": [
     {
       "title": "A Title",
-      "author": "Alex",
+      "author": "Kyra",
       "genre": "non-fiction",
       "publish": "4th September 2019",
       "slug": "pageone",
@@ -39,7 +39,7 @@
     },
     {
       "title": "A job app12",
-      "author": "Alex",
+      "author": "Henry",
       "genre": "non-fiction",
       "publish": "4th September 2019",
       "slug": "pagethree",

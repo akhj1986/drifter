@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { Header2, Paragraph, Wrapper, Anchor } from "../../../presentations"
-import { ThemeContext } from "../../../presentations/theme-context"
+import { ThemeContext } from "../../../context/theme-context"
 
 export default () => {
   const context = useContext(ThemeContext)
@@ -8,13 +8,13 @@ export default () => {
     <Wrapper
       padding="0 50px"
       smallBreakPadding="0 80px"
-      align="flex-start"
-      justify="flex-start"
       background={context.theme.background}
       color={context.theme.text}
     >
-      <Header2>Contact</Header2>
-      <Paragraph>
+      <Header2 margin="50px 0 30px" fontSize={context.scale.header2}>
+        Contact
+      </Header2>
+      <Paragraph lineHeight={context.scale.lineHeight}>
         If you would like to be published on Drifter, please email your work to{" "}
         <Anchor
           href="mailto: example@drifter.com"
