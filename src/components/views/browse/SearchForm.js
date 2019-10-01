@@ -13,7 +13,7 @@ export default ({
     <MyForm
       onSubmit={onSubmit}
       row
-      width="100vw"
+      width="auto"
       height="31px"
       background="white"
     >
@@ -29,9 +29,6 @@ export default ({
       ></TextInput>
       <MyButton type="submit" width="60px" height="30px">
         <SearchIcon size="25px"></SearchIcon>
-      </MyButton>
-      <MyButton onClick={handleClick} fontSize="25px" width="50px">
-        X
       </MyButton>
     </MyForm>
   )

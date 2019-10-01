@@ -10,9 +10,8 @@ export default () => {
   return (
     <>
       <Wrapper
-        padding="0 50px"
+        padding={context.scale.outerPadding}
         margin="50px 0"
-        smallBreakPadding="0 80px"
         background={context.theme.background}
         color={context.theme.text}
       >
@@ -25,7 +24,10 @@ export default () => {
           {info.about}
         </Paragraph>
       </Wrapper>
-      <Wrapper background={context.theme.background} padding="0 50px">
+      <Wrapper
+        background={context.theme.background}
+        padding={context.scale.outerPadding}
+      >
         <Header2
           fontSize={context.scale.header2}
           margin="0 0 30px"

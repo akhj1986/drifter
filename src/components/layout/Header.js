@@ -15,10 +15,11 @@ export default () => {
 
   return (
     <Wrapper
-      height="150px"
+      height={context.scale.headerHeight}
       justify="space-between"
       background={context.theme.header}
     >
+      {/* The following Wrapper contains the theme and scale option buttons------------------------ */}
       <Wrapper
         background={context.theme.header}
         position="absolute"
@@ -92,13 +93,13 @@ export default () => {
           </MyButton>
         </Wrapper>
       </Wrapper>
+      {/* Here ends the button section and below is simply the title of the site and the rendering of the NavBar component */}
       <Header1
         color={context.theme.siteTitle}
         opacity=".8"
-        margin="60px 0 0 50px"
+        margin={context.scale.titleMargin}
         fontFamily="'Cinzel', serif"
-        fontSize="34px"
-        smallBreakMargin="50px 0 0 80px"
+        fontSize={context.scale.siteTitleFontSize}
         spacing="2px"
       >
         The Drifter

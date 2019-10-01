@@ -1,20 +1,17 @@
 import React, { useContext, useState } from "react"
 import { Wrapper } from "../../../presentations"
 import { ThemeContext } from "../../../context/theme-context"
+import { useHandleChange } from "../../../hooks/useHandleChange"
 import Summary from "./Summary"
 import SearchForm from "./SearchForm"
 import articles from "../../../data/articles.json"
 
 export default () => {
   const context = useContext(ThemeContext)
-  const [searchTerm, setSearchTerm] = useState("")
   const [result, setResult] = useState(undefined)
+  const [searchTerm, searchHandleChange] = useHandleChange("")
 
-  const handleChange = e => {
-    const { value } = e.target
-    setSearchTerm(value)
-  }
-
+  //Function to handle search: Uses a regex test using the searchTerm and checks it against articles author names and titles, and then uses setResult to save the resulting filtered array
   const handleSubmit = e => {
     e.preventDefault()
     const match = new RegExp(searchTerm, "i")
@@ -32,18 +29,18 @@ export default () => {
   return (
     <Wrapper
       margin="50px 0 0"
-      padding="0 50px"
-      smallBreakPadding="0 80px"
+      padding={context.scale.outerPadding}
       background={context.theme.background}
       color={context.theme.text}
     >
       <SearchForm
         name="search"
-        onChange={handleChange}
+        onChange={searchHandleChange}
         onSubmit={handleSubmit}
         placeholder="Search by author or title"
         value={searchTerm}
       ></SearchForm>
+      {/* If there are results from the search this maps results onto Summary components which act as links to the articles. */}
       {Array.isArray(result)
         ? result.map((a, i) => {
             return (

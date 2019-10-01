@@ -10,12 +10,12 @@ export default () => {
       background={context.theme.nav}
       row
       width="100%"
-      height="31px"
-      padding="10px 0 10px 50px"
-      smallBreakPadding="10px 0 10px 80px"
+      height={context.scale.navBarHeight}
+      padding={context.scale.navPadding}
+      align="center"
     >
       <PageLink
-        margin="0 20px 0 0"
+        margin={context.scale.navLinkMargin}
         to="/"
         color={context.theme.linkColor}
         fontWeight={context.theme.linkWeight}
@@ -24,7 +24,7 @@ export default () => {
         Home
       </PageLink>
       <PageLink
-        margin="0 20px 0 0"
+        margin={context.scale.navLinkMargin}
         to="/browse"
         color={context.theme.linkColor}
         fontWeight={context.theme.linkWeight}

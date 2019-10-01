@@ -13,10 +13,10 @@ export default () => {
       align="center"
       height="35px"
       background={context.theme.footer}
-      padding="0 50px"
+      padding={context.scale.outerPadding}
     >
       <Header3
-        fontSize="10px"
+        fontSize={context.scale.footerText}
         margin="0 10px 0 0"
         opacity={context.theme.transluscent ? "0.7" : "1"}
         color={context.theme.footerText}
@@ -24,7 +24,7 @@ export default () => {
         Alex Harris-Jedamski
       </Header3>
       <Header3
-        fontSize="10px"
+        fontSize={context.scale.footerText}
         margin="0"
         opacity={context.theme.transluscent ? "0.7" : "1"}
         color={context.theme.footerText}

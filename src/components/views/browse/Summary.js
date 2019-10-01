@@ -12,7 +12,6 @@ export default props => {
         width={props.width}
         padding={props.padding}
         margin={props.margin}
-        smallBreakPadding="30px 80px"
       >
         <Header3 margin="0 0 5px" fontSize={context.scale.header3}>
           {props.title}

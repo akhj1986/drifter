@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { device } from "./breakpoints"
 
 export default styled.h1`
   font-size: ${props => (props.fontSize ? props.fontSize : "35px")};
@@ -10,9 +9,4 @@ export default styled.h1`
   color: ${props => (props.color ? props.color : "inherit")};
   opacity: ${props => (props.opacity ? props.opacity : "0")};
   font-family: ${props => (props.fontFamily ? props.fontFamily : "inherit")};
-  /* Media queries */
-  @media ${device.smallBreak} {
-    margin: ${props =>
-      props.smallBreakMargin ? props.smallBreakMargin : null};
-  }
 `

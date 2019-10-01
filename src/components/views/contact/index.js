@@ -6,8 +6,7 @@ export default () => {
   const context = useContext(ThemeContext)
   return (
     <Wrapper
-      padding="0 50px"
-      smallBreakPadding="0 80px"
+      padding={context.scale.outerPadding}
       background={context.theme.background}
       color={context.theme.text}
     >
