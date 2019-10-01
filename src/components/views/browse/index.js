@@ -28,7 +28,6 @@ export default () => {
 
   return (
     <Wrapper
-      margin="50px 0 0"
       padding={context.scale.outerPadding}
       background={context.theme.background}
       color={context.theme.text}
@@ -37,8 +36,10 @@ export default () => {
         name="search"
         onChange={searchHandleChange}
         onSubmit={handleSubmit}
-        placeholder="Search by author or title"
+        placeholder={`${" "}Search by author or title`}
         value={searchTerm}
+        height={context.scale.searchHeight}
+        width={context.scale.searchWidth}
       ></SearchForm>
       {/* If there are results from the search this maps results onto Summary components which act as links to the articles. */}
       {Array.isArray(result)

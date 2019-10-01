@@ -7,7 +7,6 @@ export default ({ title, author, paragraphs }) => {
 
   return (
     <Wrapper
-      margin="50px 0 0"
       padding={context.scale.outerPadding}
       background={context.theme.background}
       color={context.theme.text}

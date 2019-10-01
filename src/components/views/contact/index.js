@@ -10,7 +10,7 @@ export default () => {
       background={context.theme.background}
       color={context.theme.text}
     >
-      <Header2 margin="50px 0 30px" fontSize={context.scale.header2}>
+      <Header2 margin="0 0 30px" fontSize={context.scale.header2}>
         Contact
       </Header2>
       <Paragraph lineHeight={context.scale.lineHeight}>

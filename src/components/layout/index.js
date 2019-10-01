@@ -19,45 +19,38 @@ export default ({ children }) => {
   //----Effects and functions for ThemeContext---------------------------------------------------------------
   useEffect(() => {
     const screenTypeSetter = () => {
-      if (width < 550) {
-        return "mobile"
-      }
-      if (width < 768 && width >= 550) {
-        return "medium"
-      }
-      if (width >= 768) {
-        return "large"
-      }
+      if (width < 550) return "mobile"
+
+      if (width < 768 && width >= 550) return "medium"
+
+      if (width < 1200 && width >= 768) return "large"
+
+      if (width >= 1200) return "extra-large"
     }
     const screenType = screenTypeSetter()
     setScale(() => {
-      if (scaleValue === 0 && screenType === "mobile") {
+      if (scaleValue === 0 && screenType === "mobile")
         return scales.regularMobile
-      }
-      if (scaleValue === 1 && screenType === "mobile") {
-        return scales.largeMobile
-      }
-      if (scaleValue === 2 && screenType === "mobile") {
+      if (scaleValue === 1 && screenType === "mobile") return scales.largeMobile
+      if (scaleValue === 2 && screenType === "mobile")
         return scales.extraLargeMobile
-      }
-      if (scaleValue === 0 && screenType === "medium") {
+      if (scaleValue === 0 && screenType === "medium")
         return scales.regularMedium
-      }
-      if (scaleValue === 1 && screenType === "medium") {
-        return scales.largeMedium
-      }
-      if (scaleValue === 2 && screenType === "medium") {
+      if (scaleValue === 1 && screenType === "medium") return scales.largeMedium
+      if (scaleValue === 2 && screenType === "medium")
         return scales.extraLargeMedium
-      }
-      if (scaleValue === 0 && screenType === "large") {
+      if (scaleValue === 0 && screenType === "large")
         return scales.regularLargeScreen
-      }
-      if (scaleValue === 1 && screenType === "large") {
+      if (scaleValue === 1 && screenType === "large")
         return scales.largeLargeScreen
-      }
-      if (scaleValue === 2 && screenType === "large") {
+      if (scaleValue === 2 && screenType === "large")
         return scales.extraLargeLargeScreen
-      }
+      if (scaleValue === 0 && screenType === "extra-large")
+        return scales.regularExtraLargeScreen
+      if (scaleValue === 1 && screenType === "extra-large")
+        return scales.largeExtraLargeScreen
+      if (scaleValue === 2 && screenType === "extra-large")
+        return scales.extraLargeExtraLargeScreen
     })
   }, [scaleValue, width])
 

@@ -43,8 +43,9 @@ export const themes = {
 
 //These following objects set the regular values for scale across the site for different screen sizes.
 const mobileScaleValues = {
-  outerPadding: 50,
+  outerPadding: "0 50px",
   headerHeight: 150,
+  headerMargin: "0 0 50px",
   titleMargin: "60px 0 0 50px",
   navPadding: "10px 0 10px 50px",
   navBarHeight: 31,
@@ -58,12 +59,15 @@ const mobileScaleValues = {
   smallInfo: 10,
   footerText: 10,
   spacing: 2,
-  lineHeight: 1.5
+  lineHeight: 1.5,
+  searchHeight: "31px",
+  searchWidth: "auto"
 }
 
 const mediumScaleValues = {
-  outerPadding: 80,
+  outerPadding: "0 80px",
   headerHeight: 150,
+  headerMargin: "0 0 50px",
   titleMargin: "50px 0 0 80px",
   navPadding: "10px 0 10px 80px",
   navBarHeight: 31,
@@ -77,12 +81,15 @@ const mediumScaleValues = {
   smallInfo: 10,
   footerText: 10,
   spacing: 2,
-  lineHeight: 1.5
+  lineHeight: 1.5,
+  searchHeight: "40px",
+  searchWidth: "400px"
 }
 
 const largeScreenScaleValues = {
-  outerPadding: 100,
+  outerPadding: "0 100px",
   headerHeight: 170,
+  headerMargin: "0 0 60px",
   titleMargin: "50px 0 0 100px",
   navPadding: "10px 0 10px 100px",
   navBarHeight: 35,
@@ -96,24 +103,48 @@ const largeScreenScaleValues = {
   smallInfo: 12,
   footerText: 12,
   spacing: 2,
-  lineHeight: 1.8
+  lineHeight: 1.8,
+  searchHeight: "31px",
+  searchWidth: "auto"
+}
+const extraLargeScreenScaleValues = {
+  outerPadding: `0 calc((100vw - 1000px)/2)`,
+  headerHeight: 170,
+  headerMargin: "0 0 60px",
+  titleMargin: "50px 0 0 calc((100vw - 1000px)/2)",
+  navPadding: "10px 0 10px calc((100vw - 1000px)/2)",
+  navBarHeight: 35,
+  siteTitleFontSize: "45px",
+  fontSize: 18,
+  navLink: 13,
+  navLinkMargin: "0 40px 0 0",
+  header2: 27,
+  header3: 18,
+  infoText: 18,
+  smallInfo: 12,
+  footerText: 12,
+  spacing: 2,
+  lineHeight: 1.8,
+  searchHeight: "31px",
+  searchWidth: "auto"
 }
 
-//This object sets the scale factors for resizing for accessibility purposes
+//This object sets the scale factors for resizing for accessibility purposes-----------------------------------
 const scaleFactors = {
   regularScale: 1,
   largeScale: 1.25,
   extraLargeScale: 1.5
 }
 
-//This function applies the scales to the different screen sizes
+//This function applies the scales to the different screen sizes-----------------------------------------------------
 
 const applyScale = (scale, screenSize) => {
   return {
-    outerPadding: `0 ${screenSize.outerPadding}px`,
+    outerPadding: screenSize.outerPadding,
     headerHeight: `${
       scale === 1.5 ? screenSize.headerHeight + 10 : screenSize.headerHeight
     }px`,
+    headerMargin: screenSize.headerMargin,
     titleMargin: screenSize.titleMargin,
     navPadding: screenSize.navPadding,
     navBarHeight: `${
@@ -131,11 +162,13 @@ const applyScale = (scale, screenSize) => {
     smallInfo: `${screenSize.smallInfo * scale}px`,
     footerText: `${screenSize.footerText * scale}px`,
     spacing: `${screenSize.spacing * scale}px`,
-    lineHeight: `${screenSize.lineHeight * scale}rem`
+    lineHeight: `${screenSize.lineHeight * scale}rem`,
+    searchHeight: screenSize.searchHeight,
+    searchWidth: screenSize.searchWidth
   }
 }
 
-//This export function puts together the screen sizes and the scale factors for access within components through context
+//This export object puts together the screen sizes and the scale factors for access within components through context
 export const scales = {
   regularMobile: applyScale(scaleFactors.regularScale, mobileScaleValues),
   largeMobile: applyScale(scaleFactors.largeScale, mobileScaleValues),
@@ -151,10 +184,22 @@ export const scales = {
   extraLargeLargeScreen: applyScale(
     scaleFactors.extraLargeScale,
     largeScreenScaleValues
+  ),
+  regularExtraLargeScreen: applyScale(
+    scaleFactors.regularScale,
+    extraLargeScreenScaleValues
+  ),
+  largeExtraLargeScreen: applyScale(
+    scaleFactors.largeScale,
+    extraLargeScreenScaleValues
+  ),
+  extraLargeExtraLargeScreen: applyScale(
+    scaleFactors.extraLargeScale,
+    extraLargeScreenScaleValues
   )
 }
 
-//This function creates the context for components to access
+//This function creates the context for components to access----------------------------------------------------
 export const ThemeContext = React.createContext({
   theme: themes.light,
   toggleTheme: () => {},

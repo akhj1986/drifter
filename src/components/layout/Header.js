@@ -18,6 +18,7 @@ export default () => {
       height={context.scale.headerHeight}
       justify="space-between"
       background={context.theme.header}
+      margin={context.scale.headerMargin}
     >
       {/* The following Wrapper contains the theme and scale option buttons------------------------ */}
       <Wrapper

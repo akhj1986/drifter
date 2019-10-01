@@ -11,7 +11,7 @@ export default () => {
     <>
       <Wrapper
         padding={context.scale.outerPadding}
-        margin="50px 0"
+        margin="0 0 50px"
         background={context.theme.background}
         color={context.theme.text}
       >

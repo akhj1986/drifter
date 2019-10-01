@@ -7,15 +7,17 @@ export default ({
   onChange,
   onSubmit,
   placeholder,
-  handleClick
+  width,
+  height
 }) => {
   return (
     <MyForm
       onSubmit={onSubmit}
       row
-      width="auto"
-      height="31px"
+      width={width}
+      height={height}
       background="white"
+      margin="0 0 30px"
     >
       <TextInput
         type="text"
@@ -23,11 +25,11 @@ export default ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        height="30px"
+        height="100%"
         width="100%"
         fontSize="20px"
       ></TextInput>
-      <MyButton type="submit" width="60px" height="30px">
+      <MyButton type="submit" width={height} height={height}>
         <SearchIcon size="25px"></SearchIcon>
       </MyButton>
     </MyForm>
