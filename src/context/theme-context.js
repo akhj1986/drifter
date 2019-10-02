@@ -18,7 +18,8 @@ export const themes = {
     button: {
       background: "#000",
       offset: "10px"
-    }
+    },
+    searchButtonColor: { back: "#ffffff", icon: "#555" }
   },
   dark: {
     name: "dark",
@@ -37,7 +38,8 @@ export const themes = {
     button: {
       background: "#000",
       offset: "10px"
-    }
+    },
+    searchButtonColor: { back: "#FF0", icon: "#000" }
   }
 }
 
@@ -104,8 +106,8 @@ const largeScreenScaleValues = {
   footerText: 12,
   spacing: 2,
   lineHeight: 1.8,
-  searchHeight: "31px",
-  searchWidth: "auto"
+  searchHeight: "40px",
+  searchWidth: "600px"
 }
 const extraLargeScreenScaleValues = {
   outerPadding: `0 calc((100vw - 1000px)/2)`,
@@ -125,8 +127,8 @@ const extraLargeScreenScaleValues = {
   footerText: 12,
   spacing: 2,
   lineHeight: 1.8,
-  searchHeight: "31px",
-  searchWidth: "auto"
+  searchHeight: "40px",
+  searchWidth: "700px"
 }
 
 //This object sets the scale factors for resizing for accessibility purposes-----------------------------------

@@ -8,7 +8,11 @@ export default ({
   onSubmit,
   placeholder,
   width,
-  height
+  height,
+  margin,
+  background,
+  searchButtonColor,
+  searchIconColor
 }) => {
   return (
     <MyForm
@@ -16,8 +20,8 @@ export default ({
       row
       width={width}
       height={height}
-      background="white"
-      margin="0 0 30px"
+      background={background ? background : "white"}
+      margin={margin}
     >
       <TextInput
         type="text"
@@ -29,8 +33,13 @@ export default ({
         width="100%"
         fontSize="20px"
       ></TextInput>
-      <MyButton type="submit" width={height} height={height}>
-        <SearchIcon size="25px"></SearchIcon>
+      <MyButton
+        type="submit"
+        width={height}
+        height={height}
+        background={searchButtonColor}
+      >
+        <SearchIcon size="25px" color={searchIconColor}></SearchIcon>
       </MyButton>
     </MyForm>
   )
