@@ -27,24 +27,31 @@ export default () => {
         justify="space-between"
         align="center"
         row
-        top="10px"
-        right={context.theme.button.offset}
-        width="200px"
+        top={context.scale.headerButtons.offsetTop}
+        right={context.scale.headerButtons.offsetRight}
+        width={context.scale.headerButtons.containerWidth}
         spacing="2px"
         height="25px"
       >
-        <Wrapper background={context.theme.header} row align="center">
-          <Header3
-            margin="0"
-            padding="0"
-            fontSize="13px"
-            color={context.theme.siteTitle}
-          >
-            Contrast:
-          </Header3>
+        <Wrapper
+          background={context.theme.header}
+          row
+          align="baseline"
+          width="auto"
+        >
+          {context.scale.screenType !== "mobile" ? (
+            <Header3
+              margin="0"
+              padding="0"
+              fontSize="13px"
+              color={context.theme.siteTitle}
+            >
+              Contrast:
+            </Header3>
+          ) : null}
           <MyButton
             onClick={context.toggleTheme}
-            background={context.theme.button.background}
+            background="#000"
             width="20px"
             height="20px"
             borderRadius="50%"
@@ -59,15 +66,23 @@ export default () => {
             )}
           </MyButton>
         </Wrapper>
-        <Wrapper background={context.theme.header} row align="baseline">
-          <Header3
-            margin="0"
-            padding="0"
-            fontSize="13px"
-            color={context.theme.siteTitle}
-          >
-            Text:
-          </Header3>
+        <Wrapper
+          background={context.theme.header}
+          row
+          align="baseline"
+          width="auto"
+        >
+          {console.log("ScreenType", context.scale.screenType)}
+          {context.scale.screenType !== "mobile" ? (
+            <Header3
+              margin="0"
+              padding="0"
+              fontSize="13px"
+              color={context.theme.siteTitle}
+            >
+              Text:
+            </Header3>
+          ) : null}
           <MyButton
             onClick={context.plusScale}
             width="24px"

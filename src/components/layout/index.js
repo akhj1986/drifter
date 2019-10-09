@@ -81,7 +81,6 @@ export default ({ children }) => {
         minHeight="100vh"
         position="relative"
         maxWidth="100%"
-        fontFamily="'Darker Grotesque', sans-serif"
         color={theme.text}
         spacing={scale.spacing}
         background={theme.background}

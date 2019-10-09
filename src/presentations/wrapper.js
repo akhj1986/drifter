@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export default styled.div`
-/* Layout related --- margins, display etc */
-width: ${props => (props.width ? props.width : "100%")};
+  /* Layout related --- margins, display etc */
+  width: ${props => (props.width ? props.width : "100%")};
   max-width: ${props => (props.maxWidth ? props.maxWidth : "100vw")};
   margin: ${props => (props.margin ? props.margin : "0")};
   padding: ${props => (props.padding ? props.padding : "0")};
@@ -18,12 +18,12 @@ width: ${props => (props.width ? props.width : "100%")};
   align-items: ${props => (props.align ? props.align : "flex-start")};
   justify-content: ${props => (props.justify ? props.justify : "flex-start")};
   overflow: hidden;
-/* Theme-related --- font, color etc */
+  /* Theme-related --- font, color etc */
   background-color: ${props =>
     props.background ? props.background : "inherit"};
   color: ${props => (props.color ? props.color : "inherit")};
   font-family: ${props =>
-    props.fontFamily ? props.fontFamily : "Arial, Helvetica, sans-serif"};
+    props.fontFamily ? props.fontFamily : "'Noto Serif SC', serif"};
   font-size: ${props => (props.fontSize ? props.fontSize : "inherit")};
   letter-spacing: ${props => (props.spacing ? props.spacing : "inherit")};
   border: ${props => (props.border ? props.border : "none")};

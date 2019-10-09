@@ -15,10 +15,6 @@ export const themes = {
     linkColor: "#d4fcf8",
     linkWeight: "222",
     aTagColor: "#000",
-    button: {
-      background: "#000",
-      offset: "10px"
-    },
     searchButtonColor: { back: "#ffffff", icon: "#555" }
   },
   dark: {
@@ -35,20 +31,22 @@ export const themes = {
     linkColor: "#000",
     linkWeight: "666",
     aTagColor: "#FF0",
-    button: {
-      background: "#000",
-      offset: "10px"
-    },
     searchButtonColor: { back: "#FF0", icon: "#000" }
   }
 }
 
 //These following objects set the regular values for scale across the site for different screen sizes.
 const mobileScaleValues = {
+  screenType: "mobile",
   outerPadding: "0 50px",
-  headerHeight: 150,
+  headerHeight: 120,
   headerMargin: "0 0 50px",
-  titleMargin: "60px 0 0 50px",
+  headerButtons: {
+    offsetTop: "10px",
+    offsetRight: "10px",
+    containerWidth: "72px"
+  },
+  titleMargin: "30px 0 0 50px",
   navPadding: "10px 0 10px 50px",
   navBarHeight: 31,
   siteTitleFontSize: "34px",
@@ -67,13 +65,19 @@ const mobileScaleValues = {
 }
 
 const mediumScaleValues = {
+  screenType: "medium",
   outerPadding: "0 80px",
   headerHeight: 150,
   headerMargin: "0 0 50px",
-  titleMargin: "50px 0 0 80px",
+  headerButtons: {
+    offsetTop: "10px",
+    offsetRight: "10px",
+    containerWidth: "200px"
+  },
+  titleMargin: "40px 0 0 80px",
   navPadding: "10px 0 10px 80px",
   navBarHeight: 31,
-  siteTitleFontSize: "40px",
+  siteTitleFontSize: "45px",
   fontSize: 15,
   navLink: 11,
   navLinkMargin: "0 30px 0 0",
@@ -89,13 +93,19 @@ const mediumScaleValues = {
 }
 
 const largeScreenScaleValues = {
+  screenType: "large",
   outerPadding: "0 100px",
   headerHeight: 170,
   headerMargin: "0 0 60px",
-  titleMargin: "50px 0 0 100px",
+  headerButtons: {
+    offsetTop: "20px",
+    offsetRight: "20px",
+    containerWidth: "200px"
+  },
+  titleMargin: "45px 0 0 100px",
   navPadding: "10px 0 10px 100px",
   navBarHeight: 35,
-  siteTitleFontSize: "45px",
+  siteTitleFontSize: "50px",
   fontSize: 18,
   navLink: 13,
   navLinkMargin: "0 40px 0 0",
@@ -110,13 +120,19 @@ const largeScreenScaleValues = {
   searchWidth: "600px"
 }
 const extraLargeScreenScaleValues = {
+  screenType: "extra-large",
   outerPadding: `0 calc((100vw - 1000px)/2)`,
   headerHeight: 170,
   headerMargin: "0 0 60px",
-  titleMargin: "50px 0 0 calc((100vw - 1000px)/2)",
+  headerButtons: {
+    offsetTop: "20px",
+    offsetRight: "30px",
+    containerWidth: "200px"
+  },
+  titleMargin: "45px 0 0 calc((100vw - 1000px)/2)",
   navPadding: "10px 0 10px calc((100vw - 1000px)/2)",
   navBarHeight: 35,
-  siteTitleFontSize: "45px",
+  siteTitleFontSize: "50px",
   fontSize: 18,
   navLink: 13,
   navLinkMargin: "0 40px 0 0",
@@ -142,11 +158,17 @@ const scaleFactors = {
 
 const applyScale = (scale, screenSize) => {
   return {
+    screenType: screenSize.screenType,
     outerPadding: screenSize.outerPadding,
     headerHeight: `${
       scale === 1.5 ? screenSize.headerHeight + 10 : screenSize.headerHeight
     }px`,
     headerMargin: screenSize.headerMargin,
+    headerButtons: {
+      offsetTop: screenSize.headerButtons.offsetTop,
+      offsetRight: screenSize.headerButtons.offsetRight,
+      containerWidth: screenSize.headerButtons.containerWidth
+    },
     titleMargin: screenSize.titleMargin,
     navPadding: screenSize.navPadding,
     navBarHeight: `${
