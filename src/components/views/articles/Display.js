@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
-import { Wrapper, Paragraph, Header2, Header3 } from "../../../presentations"
-import { ThemeContext } from "../../../context/theme-context"
+import { Wrapper, Paragraph, Header2, Header3 } from "presentations"
+import { ThemeContext } from "context/theme-context"
 
 export default ({ title, author, paragraphs }) => {
   const context = useContext(ThemeContext)

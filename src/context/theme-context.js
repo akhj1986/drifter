@@ -7,12 +7,13 @@ export const themes = {
     background: "#ffffff",
     transluscent: true,
     text: "#555",
-    siteTitle: "#222",
-    header: "#fdd8dc",
-    nav: "#F78693",
-    footer: "rgba(134, 147, 247, 0.7)",
+    siteTitle: "rgba(34, 34, 34, 0.7)",
+    // header: "#f27f8c",
+    header: "#f6a5af",
+    nav: "#fbbbc3",
+    footer: "rgba(150, 150, 150, 0.2)",
     footerText: "#1744E8",
-    linkColor: "#d4fcf8",
+    linkColor: "#555",
     linkWeight: "222",
     aTagColor: "#000",
     searchButtonColor: { back: "#ffffff", icon: "#555" }
@@ -36,198 +37,125 @@ export const themes = {
 }
 
 //These following objects set the regular values for scale across the site for different screen sizes.
-const mobileScaleValues = {
-  screenType: "mobile",
-  outerPadding: "0 50px",
-  headerHeight: 120,
-  headerMargin: "0 0 50px",
-  headerButtons: {
-    offsetTop: "10px",
-    offsetRight: "10px",
-    containerWidth: "72px"
-  },
-  titleMargin: "30px 0 0 50px",
-  navPadding: "10px 0 10px 50px",
-  navBarHeight: 31,
-  siteTitleFontSize: "34px",
-  fontSize: 15,
-  navLink: 11,
-  navLinkMargin: "0 20px 0 0",
-  header2: 24,
-  header3: 15,
-  infoText: 15,
-  smallInfo: 10,
-  footerText: 10,
-  spacing: 2,
-  lineHeight: 1.5,
-  searchHeight: "31px",
-  searchWidth: "auto"
-}
-
-const mediumScaleValues = {
-  screenType: "medium",
-  outerPadding: "0 80px",
-  headerHeight: 150,
-  headerMargin: "0 0 50px",
-  headerButtons: {
-    offsetTop: "10px",
-    offsetRight: "10px",
-    containerWidth: "200px"
-  },
-  titleMargin: "40px 0 0 80px",
-  navPadding: "10px 0 10px 80px",
-  navBarHeight: 31,
-  siteTitleFontSize: "45px",
-  fontSize: 15,
-  navLink: 11,
-  navLinkMargin: "0 30px 0 0",
-  header2: 24,
-  header3: 15,
-  infoText: 15,
-  smallInfo: 10,
-  footerText: 10,
-  spacing: 2,
-  lineHeight: 1.5,
-  searchHeight: "40px",
-  searchWidth: "400px"
-}
-
-const largeScreenScaleValues = {
-  screenType: "large",
-  outerPadding: "0 100px",
-  headerHeight: 170,
-  headerMargin: "0 0 60px",
-  headerButtons: {
-    offsetTop: "20px",
-    offsetRight: "20px",
-    containerWidth: "200px"
-  },
-  titleMargin: "45px 0 0 100px",
-  navPadding: "10px 0 10px 100px",
-  navBarHeight: 35,
-  siteTitleFontSize: "50px",
-  fontSize: 18,
-  navLink: 13,
-  navLinkMargin: "0 40px 0 0",
-  header2: 27,
-  header3: 18,
-  infoText: 18,
-  smallInfo: 12,
-  footerText: 12,
-  spacing: 2,
-  lineHeight: 1.8,
-  searchHeight: "40px",
-  searchWidth: "600px"
-}
-const extraLargeScreenScaleValues = {
-  screenType: "extra-large",
-  outerPadding: `0 calc((100vw - 1000px)/2)`,
-  headerHeight: 170,
-  headerMargin: "0 0 60px",
-  headerButtons: {
-    offsetTop: "20px",
-    offsetRight: "30px",
-    containerWidth: "200px"
-  },
-  titleMargin: "45px 0 0 calc((100vw - 1000px)/2)",
-  navPadding: "10px 0 10px calc((100vw - 1000px)/2)",
-  navBarHeight: 35,
-  siteTitleFontSize: "50px",
-  fontSize: 18,
-  navLink: 13,
-  navLinkMargin: "0 40px 0 0",
-  header2: 27,
-  header3: 18,
-  infoText: 18,
-  smallInfo: 12,
-  footerText: 12,
-  spacing: 2,
-  lineHeight: 1.8,
-  searchHeight: "40px",
-  searchWidth: "700px"
-}
-
-//This object sets the scale factors for resizing for accessibility purposes-----------------------------------
-const scaleFactors = {
-  regularScale: 1,
-  largeScale: 1.25,
-  extraLargeScale: 1.5
-}
-
-//This function applies the scales to the different screen sizes-----------------------------------------------------
-
-const applyScale = (scale, screenSize) => {
-  return {
-    screenType: screenSize.screenType,
-    outerPadding: screenSize.outerPadding,
-    headerHeight: `${
-      scale === 1.5 ? screenSize.headerHeight + 10 : screenSize.headerHeight
-    }px`,
-    headerMargin: screenSize.headerMargin,
-    headerButtons: {
-      offsetTop: screenSize.headerButtons.offsetTop,
-      offsetRight: screenSize.headerButtons.offsetRight,
-      containerWidth: screenSize.headerButtons.containerWidth
-    },
-    titleMargin: screenSize.titleMargin,
-    navPadding: screenSize.navPadding,
-    navBarHeight: `${
-      scale === 1
-        ? screenSize.navBarHeight
-        : screenSize.navBarHeight * (scale - 0.1)
-    }px`,
-    siteTitleFontSize: screenSize.siteTitleFontSize,
-    fontSize: `${screenSize.fontSize * scale}px`,
-    navLink: `${screenSize.navLink * scale}px`,
-    navLinkMargin: screenSize.navLinkMargin,
-    header2: `${screenSize.header2 * scale}px`,
-    header3: `${screenSize.header3 * scale}px`,
-    infoText: `${screenSize.infoText * scale}px`,
-    smallInfo: `${screenSize.smallInfo * scale}px`,
-    footerText: `${screenSize.footerText * scale}px`,
-    spacing: `${screenSize.spacing * scale}px`,
-    lineHeight: `${screenSize.lineHeight * scale}rem`,
-    searchHeight: screenSize.searchHeight,
-    searchWidth: screenSize.searchWidth
-  }
-}
-
-//This export object puts together the screen sizes and the scale factors for access within components through context
 export const scales = {
-  regularMobile: applyScale(scaleFactors.regularScale, mobileScaleValues),
-  largeMobile: applyScale(scaleFactors.largeScale, mobileScaleValues),
-  extraLargeMobile: applyScale(scaleFactors.extraLargeScale, mobileScaleValues),
-  regularMedium: applyScale(scaleFactors.regularScale, mediumScaleValues),
-  largeMedium: applyScale(scaleFactors.largeScale, mediumScaleValues),
-  extraLargeMedium: applyScale(scaleFactors.extraLargeScale, mediumScaleValues),
-  regularLargeScreen: applyScale(
-    scaleFactors.regularScale,
-    largeScreenScaleValues
-  ),
-  largeLargeScreen: applyScale(scaleFactors.largeScale, largeScreenScaleValues),
-  extraLargeLargeScreen: applyScale(
-    scaleFactors.extraLargeScale,
-    largeScreenScaleValues
-  ),
-  regularExtraLargeScreen: applyScale(
-    scaleFactors.regularScale,
-    extraLargeScreenScaleValues
-  ),
-  largeExtraLargeScreen: applyScale(
-    scaleFactors.largeScale,
-    extraLargeScreenScaleValues
-  ),
-  extraLargeExtraLargeScreen: applyScale(
-    scaleFactors.extraLargeScale,
-    extraLargeScreenScaleValues
-  )
+  // mobileScaleValues
+  mobile: {
+    screenType: "mobile",
+    outerPadding: "0 50px",
+    headerHeight: "100px",
+    headerMargin: "0 0 50px",
+    headerButtons: {
+      offsetTop: "10px",
+      offsetRight: "10px",
+      containerWidth: "20px",
+      buttonSize: "15px"
+    },
+    titleMargin: "30px 0 0 50px",
+    navPadding: "10px 0 10px 50px",
+    navBarHeight: "31px",
+    siteTitleFontSize: "34px",
+    fontSize: "15px",
+    navLink: "9px",
+    navLinkMargin: "0 20px 0 0",
+    header2: "20px",
+    header3: "15px",
+    infoText: "15px",
+    smallInfo: "10px",
+    footerText: "10px",
+    spacing: "2px",
+    lineHeight: "1.5rem",
+    searchHeight: "31px",
+    searchWidth: "auto"
+  },
+  // mediumScaleValues
+  mediumScreen: {
+    screenType: "medium",
+    outerPadding: "0 80px",
+    headerHeight: "150px",
+    headerMargin: "0 0 50px",
+    headerButtons: {
+      offsetTop: "10px",
+      offsetRight: "10px",
+      containerWidth: "200px"
+    },
+    titleMargin: "40px 0 0 80px",
+    navPadding: "10px 0 10px 80px",
+    navBarHeight: "31px",
+    siteTitleFontSize: "45px",
+    fontSize: "15px",
+    navLink: "11px",
+    navLinkMargin: "0 30px 0 0",
+    header2: "24px",
+    header3: "15px",
+    infoText: "15px",
+    smallInfo: "10px",
+    footerText: "10px",
+    spacing: "2px",
+    lineHeight: "1.5rem",
+    searchHeight: "40px",
+    searchWidth: "400px"
+  },
+  // largeScreenScaleValues:
+  largeScreen: {
+    screenType: "large",
+    outerPadding: "0 100px",
+    headerHeight: "170px",
+    headerMargin: "0 0 60px",
+    headerButtons: {
+      offsetTop: "20px",
+      offsetRight: "20px",
+      containerWidth: "200px"
+    },
+    titleMargin: "45px 0 0 100px",
+    navPadding: "10px 0 10px 100px",
+    navBarHeight: "35px",
+    siteTitleFontSize: "50px",
+    fontSize: "18px",
+    navLink: "13px",
+    navLinkMargin: "0 40px 0 0",
+    header2: "27px",
+    header3: "18px",
+    infoText: "18px",
+    smallInfo: "12px",
+    footerText: "12px",
+    spacing: "2px",
+    lineHeight: "1.8rem",
+    searchHeight: "40px",
+    searchWidth: "600px"
+  },
+  // extraLargeScreenScaleValues
+  extraLargeScreen: {
+    screenType: "extra-large",
+    outerPadding: `0 calc((100vw - 1000px)/2)`,
+    headerHeight: "170px",
+    headerMargin: "0 0 60px",
+    headerButtons: {
+      offsetTop: "20px",
+      offsetRight: "30px",
+      containerWidth: "200px"
+    },
+    titleMargin: "45px 0 0 calc((100vw - 1000px)/2)",
+    navPadding: "10px 0 10px calc((100vw - 1000px)/2)",
+    navBarHeight: "35px",
+    siteTitleFontSize: "50px",
+    fontSize: "18px",
+    navLink: "13px",
+    navLinkMargin: "0 40px 0 0",
+    header2: "27px",
+    header3: "18px",
+    infoText: "18px",
+    smallInfo: "12px",
+    footerText: "12px",
+    spacing: "2px",
+    lineHeight: "1.8rem",
+    searchHeight: "40px",
+    searchWidth: "700px"
+  }
 }
 
 //This function creates the context for components to access----------------------------------------------------
 export const ThemeContext = React.createContext({
   theme: themes.light,
   toggleTheme: () => {},
-  scale: scales.regularMobile,
-  plusScale: () => {},
-  minusScale: () => {}
+  scale: scales.mobile
 })

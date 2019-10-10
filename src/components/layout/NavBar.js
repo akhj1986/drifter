@@ -1,13 +1,13 @@
 import React, { useContext } from "react"
-import { Wrapper, PageLink } from "../../presentations"
-import { ThemeContext } from "../../context/theme-context"
+import { Wrapper, PageLink } from "presentations"
+import { ThemeContext } from "context/theme-context"
 
 export default () => {
   const context = useContext(ThemeContext)
 
   return (
     <Wrapper
-      background={context.theme.nav}
+      background="none"
       row
       width="100%"
       height={context.scale.navBarHeight}

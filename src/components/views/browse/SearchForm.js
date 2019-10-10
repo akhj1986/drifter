@@ -1,5 +1,5 @@
 import React from "react"
-import { MyForm, MyButton, TextInput, SearchIcon } from "../../../presentations"
+import { MyForm, MyButton, TextInput, SearchIcon } from "presentations"
 
 export default ({
   name,

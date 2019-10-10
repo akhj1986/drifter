@@ -8,4 +8,6 @@ export default styled.h2`
   padding: ${props => (props.padding ? props.padding : "0")};
   color: ${props => (props.color ? props.color : "inherit")};
   font-family: ${props => (props.fontFamily ? props.fontFamily : "inherit")};
+  transition: ${props =>
+    props.transition ? props.transition : "color 0.5s ease-in-out"};
 `

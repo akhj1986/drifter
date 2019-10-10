@@ -6,8 +6,8 @@ import {
   MyButton,
   SunIcon,
   MoonIcon
-} from "../../presentations"
-import { ThemeContext } from "../../context/theme-context"
+} from "presentations"
+import { ThemeContext } from "context/theme-context"
 import NavBar from "./NavBar"
 
 export default () => {
@@ -17,12 +17,12 @@ export default () => {
     <Wrapper
       height={context.scale.headerHeight}
       justify="space-between"
-      background={context.theme.header}
+      background={`linear-gradient(180deg, ${context.theme.header} 20%, rgba(255,255,255,1) 100%)`}
       margin={context.scale.headerMargin}
     >
       {/* The following Wrapper contains the theme and scale option buttons------------------------ */}
       <Wrapper
-        background={context.theme.header}
+        background="none"
         position="absolute"
         justify="space-between"
         align="center"
@@ -31,14 +31,8 @@ export default () => {
         right={context.scale.headerButtons.offsetRight}
         width={context.scale.headerButtons.containerWidth}
         spacing="2px"
-        height="25px"
       >
-        <Wrapper
-          background={context.theme.header}
-          row
-          align="baseline"
-          width="auto"
-        >
+        <Wrapper row align="baseline" width="auto">
           {context.scale.screenType !== "mobile" ? (
             <Header3
               margin="0"
@@ -52,8 +46,8 @@ export default () => {
           <MyButton
             onClick={context.toggleTheme}
             background="#000"
-            width="20px"
-            height="20px"
+            width={context.scale.headerButtons.buttonSize}
+            height={context.scale.headerButtons.buttonSize}
             borderRadius="50%"
             border="none"
             margin="0 0 0 2px"
@@ -64,48 +58,6 @@ export default () => {
             ) : (
               <MoonIcon></MoonIcon>
             )}
-          </MyButton>
-        </Wrapper>
-        <Wrapper
-          background={context.theme.header}
-          row
-          align="baseline"
-          width="auto"
-        >
-          {console.log("ScreenType", context.scale.screenType)}
-          {context.scale.screenType !== "mobile" ? (
-            <Header3
-              margin="0"
-              padding="0"
-              fontSize="13px"
-              color={context.theme.siteTitle}
-            >
-              Text:
-            </Header3>
-          ) : null}
-          <MyButton
-            onClick={context.plusScale}
-            width="24px"
-            height="24px"
-            fontSize="16px"
-            fontWeight="700"
-            margin="0 0 0 2px"
-            background={context.theme.header}
-            color={context.theme.siteTitle}
-          >
-            A+
-          </MyButton>
-          <MyButton
-            onClick={context.minusScale}
-            width="20px"
-            height="20px"
-            fontSize="14px"
-            fontWeight="700"
-            margin="0 0 0 0"
-            background={context.theme.header}
-            color={context.theme.siteTitle}
-          >
-            A-
           </MyButton>
         </Wrapper>
       </Wrapper>

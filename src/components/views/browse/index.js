@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react"
-import { Wrapper, Header2 } from "../../../presentations"
-import { ThemeContext } from "../../../context/theme-context"
-import { useHandleChange } from "../../../hooks/useHandleChange"
+import { Wrapper, Header2 } from "presentations"
+import { ThemeContext } from "context/theme-context"
+import { useHandleChange } from "hooks/useHandleChange"
 import Summary from "./Summary"
 import SearchForm from "./SearchForm"
-import articles from "../../../data/articles.json"
+import articles from "data/articles.json"
 
 export default () => {
   const context = useContext(ThemeContext)

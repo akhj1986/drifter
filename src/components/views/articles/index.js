@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Display from "./Display"
 import Error from "../../Error"
-import data from "../../../data/articles.json"
+import data from "data/articles.json"
 
 export default props => {
   const [article, setArticle] = useState({
