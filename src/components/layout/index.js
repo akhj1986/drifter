@@ -54,7 +54,7 @@ export default ({ children }) => {
     setBannerOpacity("0")
     setTimeout(() => {
       setBannerState(false)
-    }, 1100)
+    }, 1200)
   }
 
   return (

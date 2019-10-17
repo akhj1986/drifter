@@ -32,34 +32,22 @@ export default () => {
         width={context.scale.headerButtons.containerWidth}
         spacing="2px"
       >
-        <Wrapper row align="baseline" width="auto">
-          {context.scale.screenType !== "mobile" ? (
-            <Header3
-              margin="0"
-              padding="0"
-              fontSize="13px"
-              color={context.theme.siteTitle}
-            >
-              Contrast:
-            </Header3>
-          ) : null}
-          <MyButton
-            onClick={context.toggleTheme}
-            background="#000"
-            width={context.scale.headerButtons.buttonSize}
-            height={context.scale.headerButtons.buttonSize}
-            borderRadius="50%"
-            border="none"
-            margin="0 0 0 2px"
-            color="yellow"
-          >
-            {context.theme.name === "dark" ? (
-              <SunIcon></SunIcon>
-            ) : (
-              <MoonIcon></MoonIcon>
-            )}
-          </MyButton>
-        </Wrapper>
+        <MyButton
+          onClick={context.toggleTheme}
+          background={context.theme.themeButtonColor}
+          width={context.scale.headerButtons.buttonSize}
+          height={context.scale.headerButtons.buttonSize}
+          borderRadius="50%"
+          border="none"
+          margin="0 0 0 2px"
+          color="yellow"
+        >
+          {context.theme.name === "dark" ? (
+            <SunIcon></SunIcon>
+          ) : (
+            <MoonIcon></MoonIcon>
+          )}
+        </MyButton>
       </Wrapper>
       {/* Here ends the button section and below is simply the title of the site and the rendering of the NavBar component */}
       <Header1

@@ -16,7 +16,8 @@ export const themes = {
     linkColor: "#555",
     linkWeight: "222",
     aTagColor: "#000",
-    searchButtonColor: { back: "#ffffff", icon: "#555" }
+    searchButtonColor: { back: "#ffffff", icon: "#555" },
+    themeButtonColor: "rgba(0,0,0,0.6)"
   },
   dark: {
     name: "dark",
@@ -32,7 +33,8 @@ export const themes = {
     linkColor: "#000",
     linkWeight: "666",
     aTagColor: "#FF0",
-    searchButtonColor: { back: "#FF0", icon: "#000" }
+    searchButtonColor: { back: "#FF0", icon: "#000" },
+    themeButtonColor: "#000"
   }
 }
 
@@ -76,7 +78,8 @@ export const scales = {
     headerButtons: {
       offsetTop: "10px",
       offsetRight: "10px",
-      containerWidth: "200px"
+      containerWidth: "20px",
+      buttonSize: "15px"
     },
     titleMargin: "40px 0 0 80px",
     navPadding: "10px 0 10px 80px",
@@ -104,7 +107,8 @@ export const scales = {
     headerButtons: {
       offsetTop: "20px",
       offsetRight: "20px",
-      containerWidth: "200px"
+      containerWidth: "20px",
+      buttonSize: "15px"
     },
     titleMargin: "45px 0 0 100px",
     navPadding: "10px 0 10px 100px",
@@ -132,7 +136,8 @@ export const scales = {
     headerButtons: {
       offsetTop: "20px",
       offsetRight: "30px",
-      containerWidth: "200px"
+      containerWidth: "20px",
+      buttonSize: "15px"
     },
     titleMargin: "45px 0 0 calc((100vw - 1000px)/2)",
     navPadding: "10px 0 10px calc((100vw - 1000px)/2)",

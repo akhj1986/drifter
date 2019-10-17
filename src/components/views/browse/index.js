@@ -9,7 +9,7 @@ import articles from "data/articles.json"
 export default () => {
   const context = useContext(ThemeContext)
   const [result, setResult] = useState(undefined)
-  const [hasSearched, setHasSearched] = useState(false)
+  const [hasSearched, setHasSearched] = useState(true)
   const [searchTerm, searchHandleChange] = useHandleChange("")
 
   //Function to handle search: Uses a regex test using the searchTerm and checks it against articles author names and titles, and then uses setResult to save the resulting filtered array
@@ -63,7 +63,7 @@ export default () => {
             )
           })
         : result}
-      {hasSearched ? null : (
+      {/* {hasSearched ? null : (
         <Wrapper background={context.theme.background}>
           <Header2
             fontSize={context.scale.header2}
@@ -91,7 +91,7 @@ export default () => {
               )
             })}
         </Wrapper>
-      )}
+      )} */}
     </Wrapper>
   )
 }
