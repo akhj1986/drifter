@@ -17,7 +17,8 @@ export default () => {
     <Wrapper
       height={context.scale.headerHeight}
       justify="space-between"
-      background={`linear-gradient(180deg, ${context.theme.header} 20%, rgba(255,255,255,1) 100%)`}
+      background={context.theme.header}
+      // background={`linear-gradient(180deg, ${context.theme.header} 20%, rgba(255,255,255,1) 100%)`}
       margin={context.scale.headerMargin}
     >
       {/* The following Wrapper contains the theme and scale option buttons------------------------ */}
